@@ -5,15 +5,14 @@
     #TODO: Present division options
         #TODO: Division input validation
 
+import FDACS_data
+confirm = 'n'
+while confirm == 'n':
+    first_name = input("Enter the user's first name: ")
+    last_name = input("Enter the user's last name: ")
+    confirm = input(f"You wrote {first_name} {last_name}.\nIs that correct? (Y/N)").lower()
+    while confirm != 'y' and confirm !='n':
+        confirm = input(f"Incorrect input.\n\nYou wrote {first_name} {last_name}.\nIs that correct? (Y/N)").lower()
 
-
-
-Import-Module ..\FDACS_data.ps1
-Write-Host $divisions
-# $first_name = Read-Host -Prompt "Enter the user's first name"
-# $last_name = Read-Host "Enter the user's last name"
-# Write-Host "You wrote $first_name $last_name."
-# $confirmation = Read-Host "Is that correct? (Y/N)"
-# foreach ($item in $FDACS_data.divisions) {
-#     Write-Host $item
-# } 
+for division in FDACS_data.divisions:
+    print(division)
